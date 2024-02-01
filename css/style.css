@@ -1,0 +1,66 @@
+* {
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+.main-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+div.flex-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+div.flex-container div.player {
+    margin: 0;
+    border: 1px solid red;
+    text-align: center;
+    height: 200px;
+    width: 200px;
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 50px;
+}
+
+div.flex-container div.player div.score {
+    font-size: xxx-large;
+}
+
+div.flex-container div.player:last-child {
+    border-left: none;
+}
+
+div.flex-container div.dice {
+    padding-top: 20px;
+    border: 1px solid blue;
+    text-align: center;
+    height: 100px;
+    width: 100px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: white;
+}
+
+div.flex-container div.dice div#dice-throw {
+    font-size: xx-large;
+}
+
+#roll {
+    margin-top: 15px;
+}
+
+.log-container {
+    display: none;
+    margin-top: 20px;
+}
