@@ -24,22 +24,20 @@ document.addEventListener("DOMContentLoaded", () => {
         const currentPlayerScoreElement = scores[curPlayer()];
         const currentPlayerScore = Number(currentPlayerScoreElement.innerHTML)+diceRoll;
 
-        setTimeout(()=>{
-            currentPlayerScoreElement.innerHTML = String(currentPlayerScore);
-            scores[curPlayer()].style.fontWeight = "normal";
-            scores[(curPlayer()+1)%2].style.fontWeight = "bold";
+        currentPlayerScoreElement.innerHTML = String(currentPlayerScore);
+        scores[curPlayer()].style.fontWeight = "normal";
+        scores[(curPlayer()+1)%2].style.fontWeight = "bold";
 
-            if(currentPlayerScore >= winningScore) {
-                result.innerHTML = `Player ${curPlayer()+1} wins!`;
-                log.innerHTML = `Player ${curPlayer()+1} wins!<br/>`+log.innerHTML;
-                rollBtn.removeEventListener("click", roll);
+        if(currentPlayerScore >= winningScore) {
+            result.innerHTML = `Player ${curPlayer()+1} wins!`;
+            log.innerHTML = `Player ${curPlayer()+1} wins!<br/>`+log.innerHTML;
+            rollBtn.removeEventListener("click", roll);
 
-                scores[curPlayer()].style.color = "green";
-                scores[curPlayer()].style.fontWeight = "bold";
-            }
+            scores[curPlayer()].style.color = "green";
+            scores[curPlayer()].style.fontWeight = "bold";
+        }
 
-            turn++;
-        }, 500);
+        turn++;
     }
     const rollBtn = document.getElementById("roll");
     rollBtn.addEventListener("click", roll);
