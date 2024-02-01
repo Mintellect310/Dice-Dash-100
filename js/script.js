@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const logContainer = document.getElementsByClassName("log-container")[0];
     const log = document.getElementById("log");
 
-    const winningScore = 20;
+    const winningScore = 100;
     const curPlayer = () => turn%2;
 
     scores[turn].style.fontWeight = "bold";
